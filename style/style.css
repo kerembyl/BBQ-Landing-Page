@@ -6,7 +6,7 @@ body{
     flex-direction: column;
 }
 
-/*Text properties*/
+/*Typography*/
 .text-top{
     color: #f18119;
     border-image:linear-gradient(to right, orange, red )50;
@@ -22,7 +22,9 @@ body{
 .text-mid{
     font-weight: 300;
     margin:0;
-    padding:2.8em;
+    padding:1em;
+    font-size: 2rem;
+    max-width: 70%;
 }
 
 .text-bottom{
@@ -31,7 +33,7 @@ body{
     font-weight: 700;
 }
 
-h2{
+.provoke-text{
     padding:2em 1em 0 1em;
     margin:0;
     font-size:1.3rem;
@@ -66,8 +68,13 @@ h2{
 
 .container-first{
     background-image: url(../images/dark-ribs.jpg);
+    background-color: #404040;
+    background-blend-mode: multiply;
     background-size: cover;
+    background-position: center;
     color:#fff;
+    min-height: 50vh;
+    justify-content: space-between;
 }
 
 .container-second{
@@ -87,31 +94,40 @@ input{
     padding:0.7em 0;
     text-align: center;
     margin: 0.5em 0;
-    
+    transform: scale(1);
+    transition: transform 250ms;
 }
 
-.submit{
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(241,129,25,1) 0%, rgba(255,88,25,1) 100%);
+.btn{
     margin:0.5em 0;
     padding:1.4em;
-    background-color: #f18119;
-    color:#fff;
     font-weight: 700;
     font-size: 0.6rem;
     letter-spacing: 0.1rem;
     border-radius: 8px;
-    border:none;
+    
+}
+
+.btn-submit{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(241,129,25,1) 0%, rgba(255,88,25,1) 100%);
+    background-color: #f18119;
+    color:#fff;
+    transform: scale(1);
+    transition: transform 250ms ease;
     cursor: pointer;
-    transition: background 2s ease ;
+    border:none;
 }
 
-.submit:hover, .submit:focus{
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(241,129,25,1) 0%, rgba(241,129,25,0.8) 100%);
-    outline: none;
+.btn-submit:hover, 
+.btn-submit:focus,
+input:hover,
+input:focus {
+    transform: scale(1.1);
+
 }
 
 
-@media screen and (min-width:650px){
+@media screen and (min-width:750px){
     body{
         flex-direction: row;
         height:100vh;
@@ -119,7 +135,6 @@ input{
     
     .container-first{
         width:65%;   
-        justify-content: space-between;      
     }
     
     .container-second{
@@ -127,4 +142,7 @@ input{
         justify-content: center; 
     }
     
+    .text-mid{
+        font-size:3rem;
+    }
 }
